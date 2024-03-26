@@ -52,6 +52,33 @@ Finally, as football enthusiasts and fans of the FIFA game, we have verified the
 > Pre-processing of the data set you chose
 > - Show some basic statistics and get insights about the data
 
+In the part, we're going to conduct the explanatory data analysis on the main dataset, which describe the full information of the players in different versions of fifa game. 
+
+First we would like to give a brief statistical visualization on the overall score of the players in every fifa version, and compare the distribution with the normal distribution data on the same mean and volatility. The figure is shown below.
+
+
+![The distribution of overall score](/figure/FIFA_score_distribution.png)
+
+Easy to see that in almost all the fifa versions, the distribution of the overall score of the players are similar to a normal distribution. In this case, we can use this statistical character to identify the difference between average players and 'exceptional' players. 
+
+Then we define the threadhold to categorize the skills of one player based on his or her overall score as "world-top player", "top player", "great player", "above-average player", "below-average player", "bad player". The threadshold is based on the assumption of the normal distribution of the overall score.
+
+Then we take Kylian Mbappé and Luis Suárez as examples, to give us a glimpse on the career trajectories from the top football players in different period of their careers.
+
+![Kylian Mbappé's career trajectory](/figure/mbappe.jpg)
+
+From the evolvement of Kylian Mbappe, we can see that how does a top-tier football player's career rise from an average player. We also notice that as the skill class improve, he has transferred from Monaco to Paris Saint Germain --one of the best football teams in the world. Here he has obtained significant improvement on his overall score. 
+
+![Luis Suárez's career trajectory](/figure/Suarez.jpg)
+
+Then we also look into another counterpart example, the "El Pistolero"  Luis Suárez. He has been classified as a world-top player dyring his service in FC Barcelona, but as his age grows, his football skills have gradually decreased after his transfer to Atlético Madrid, before he decided to play for Nacional in US football league. In this two examples, we have seen how a rising star and a former gold striker plan his own career. From here, we try to find out in general how those players plan their own careers by moving among the top football teams.
+
+After that, we explore the most improved players in this 8-year frame.
+
+![Most improved players in overall score](/figure/Most_improved_players.png)
+
+We can see only 3 players actually got the hugest leap in his 8-year football career, marking the most impressive improvement in the transfer market, namely M. Maignan, F. de Jong and T. Alexander-Arnold. In this 8 years, these 3 players actually rise from an below-average player to a world-top player. Along with other players who has class change, we are determine that it is feasible to focus on the these class change of these players, to show how does these players plan their career, and how those high-potential players are transferred in those elite football teams.
+
 ### Related work
 
 ###### Fiability of the data:
