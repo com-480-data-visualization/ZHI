@@ -54,11 +54,31 @@ Finally, as football enthusiasts and fans of the FIFA game, we have verified the
 
 ### Related work
 
+###### Fiability of the data:
 
-> - What others have already done with the data?
-> - Why is your approach original?
-> - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
-> - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
+Although our data is derived from the FIFA game, our aim is to investigate real-world football phenomena. As demonstrated in [this behind-the-scenes video](https://www.youtube.com/watch?v=yCR6STInuqk&t=131s), player statistics are measured using sensors. Therefore, it can be asserted that the player statistics in the game are representative of reality, which lends credibility to our project. 
+
+###### What others have already done with the data:
+
+As seen on the [Kaggle page for this dataset](https://www.kaggle.com/datasets/stefanoleone992/fifa-23-complete-player-dataset/code), and on pages for previous versions like [this one up to FIFA 22](https://www.kaggle.com/datasets/stefanoleone992/fifa-22-complete-player-dataset/code), several projects have utilized this dataset. However, the vast majority of them focus on machine learning models for predicting player attributes. This makes existing projects different from ours, which is centered on visualization.
+
+###### Why is our approach original:
+
+The uniqueness of our project can be summarized in two key points:
+
+- Utilizing **game data** to address questions about professional football in the **real world**.
+- Employing datasets **from each version** of the game over a continuous nine-year period to analyze trends **over time**.
+
+###### Source of inspiration for visualization:
+
+- The datasets have been scrapped from the [SoFIFA](https://sofifa.com/) website. Naturally, this site served as our inspiration. However, our aim is to investigate real-world football phenomena, setting our project apart from the game-centric purpose of the source site.
+
+- In [this Macro Polo project](https://macropolo.org/digital-projects/the-global-ai-talent-tracker/), there's an exceptional visualization graph depicting the career trajectories of leading AI researchers. This visualization can similarly highlight the transfer paths of improved players, providing the audience with a comprehensive overview of their career trajectories and transfers between clubs.
+
+---
+
+No member of the group has previously worked on a similar project. Therefore, the topic we are exploring is completely new to all group members.
+
 
 ## Milestone 2 (26th April, 5pm)
 
