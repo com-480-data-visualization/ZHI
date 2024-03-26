@@ -52,7 +52,7 @@ Finally, as football enthusiasts and fans of the FIFA game, we have verified the
 > Pre-processing of the data set you chose
 > - Show some basic statistics and get insights about the data
 
-In this part, we're going to conduct the explanatory data analysis on the main dataset, which describe the full information of the players in different versions of fifa game. 
+In this part, we're going to conduct the exploratory data analysis on the main dataset, which describe the full information of the players in different versions of fifa game. 
 
 First we would like to give a brief statistical visualization on the overall score of the players in every fifa version, and compare the distribution with the normal distribution data on the same mean and volatility. The figure is shown below.
 
