@@ -32,7 +32,7 @@ This dataset encompasses 9 years of data, ranging from FIFA 15 to FIFA 23, and i
 - `male_players.csv`
 - `male_teams.csv`
 
-Our primary focus is the `male_players` sub-dataset, which features detailed information on football players. Across all the years covered, this dataset includes nearly 60K different players, amounting to a total of 10M entries. It contains 110 attributes per player, but we will specifically concentrate on a select dozen that are most relevant to our analysis. This includes the player's name, team, country, overall score, and more.
+Our primary focus is the `male_players` sub-dataset, which features detailed information on football players. Across all the years covered, this dataset includes nearly 60K different players, amounting to a total of 10M entries. It contains 110 attributes per player, but we will specifically concentrate on a select dozen that are most relevant to our analysis. This includes the player's _name_, _team_, _country_, _overall score_, and more.
 
 Additionally, the `male_teams` complementary dataset encompasses over 1,000 different teams, documenting all the teams in the game. The team IDs in this dataset match those in the `male_players` dataset, facilitating data merging operations without any loss of information.
 
@@ -47,9 +47,17 @@ Finally, as football enthusiasts and fans of the FIFA game, we have verified the
 
 ### Problematic
 
-> Frame the general topic of your visualization and the main axis that you want to develop.
-> - What am I trying to show with my visualization?
-> - Think of an overview for the project, your motivation, and the target audience.
+###### Purpose of our Visualization:
+
+In one sentence, this project is our attempt to visualize the engaging dynamic between a football player’s performance level and the team he is playing for throughout his career.
+
+It's widely acknowledged that a footballer's choice of team is heavily influenced by the stage they're currently at in their career trajectory—be it the early, prime, or late stage before retirement. For example, a common pattern observed is that players often start in minor or smaller leagues, gradually making a name for themselves before eventually transitioning to larger clubs in major leagues. As they age and their competitive edge diminishes, many opt to retire with the team they have the deepest attachment to or sign with a club in a lesser-known league that offers handsome salaries.
+
+Determining the precise phase of a player's career at any given time can be challenging. Yet, one method to assess this is by examining the player’s age and FIFA ratings, including age, overall level, and specific skills. Given that these factors are reliable indicators of a player's level, it is reasonable to argue that they also have a strong correlation with the player's progression in their club career. This is what we will attempt to make evident using the dataset at hand.
+
+###### Overview, Motivation, and Target Audience:
+
+Football, just like any other business, has certain patterns of career trajectories. This project is fascinating as it serves to provide newcomers to football with valuable context and insights into the sport. Moreover, it also verifies one of the common beliefs people have about football with real-life statistics and presents the results in vivid visualizations.
 
 ### Exploratory Data Analysis
 
@@ -89,7 +97,7 @@ Although our data is derived from the FIFA game, our aim is to investigate real-
 
 As seen on the [Kaggle page for this dataset](https://www.kaggle.com/datasets/stefanoleone992/fifa-23-complete-player-dataset/code), and on pages for previous versions like [this one up to FIFA 22](https://www.kaggle.com/datasets/stefanoleone992/fifa-22-complete-player-dataset/code), several projects have utilized this dataset. However, the vast majority of them focus on machine learning models for predicting player attributes. This makes existing projects different from ours, which is centered on visualization.
 
-###### Why Our Approach Is Original:
+###### Why our Approach is Original:
 
 The uniqueness of our project can be summarized in two key points:
 
