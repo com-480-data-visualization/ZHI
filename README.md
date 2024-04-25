@@ -110,15 +110,31 @@ No member of the group has previously worked on a similar project. Therefore, th
 
 ## Milestone 2 (26th April, 5pm)
 
-**10% of the final grade**
+### Website
 
-### Overview
+Our website, coded in React, is accessible via the link: [http://tansiq.ma:3000/](http://tansiq.ma:3000/)
+The current workflow of the site is depicted in the figure below:
+![Workflow](/figure/workflow.gif)
 
-This document will list the visualizations that are envisioned for the final project, and how they can be implemented. More specifically, the tools needed to implement the features will be suggested, and the core (and potential extension) ideas will be discussed. 
+We have integrated several interactive visualizations; however, for the more challenging ones, we have currently embedded an image or GIF instead of the actual graph. Nevertheless, these images or graphs are our own creations.
 
-Each subsection will be detailing one visualization. 
+### Visualizations
 
-### Sankey Diagram Showing Transfers Between Different Leagues
+Each subsection will detail our visualizations. The tools needed to implement the features will be suggested, and the core (and potential extension) ideas will be discussed. 
+
+###### 1. Player Profile:
+
+- We display a player's development over time and categorize them into five skill levels. Currently, our website utilizes an [interactive linear chart from ApexCharts](https://apexcharts.com/javascript-chart-demos/line-charts/basic/), which allows us to showcase the overall rating and other relevant information for a particular year.
+
+- Additionally, we highlight the clubs a player has been associated with using an [interactive timeline chart from ApexCharts](https://apexcharts.com/javascript-chart-demos/timeline-charts/). The advantage of this type of chart is that it makes it easier to see not only the teams the player has been part of, but it also provides a direct visualization of the duration of their stay (whether long or short). Furthermore, this is useful for visualizing players who have returned to their former clubs after playing elsewhere.
+
+- Lastly, we enhanced the player's profile by showcasing their skills. We have currently employed an [interactive radar chart from ApexCharts](https://apexcharts.com/javascript-chart-demos/radar-charts/) to display specific skills of a player. Given that we have skills data for each year, we are contemplating how to present relevant information without cluttering the graph.
+
+- We are considering the use of additional widgets later on, but they are not necessary at the moment. For example, a player's rating is bounded between 1 and 99, making it potentially interesting to display using a [radial bar from ApexCharts](https://apexcharts.com/javascript-chart-demos/radialbar-charts/).
+
+These widgets have been added to the website under "Player Evolution > [Click on a Player]". However, we still need to enhance them by adding logos for teams and countries.
+
+###### 2. Sankey Diagram Showing Transfers Between Different Leagues:
 
 We tracked the serving football leagues of 720 players from 2015 to 2023, and visualized their "transfer routes" using this Sankey Diagram. 
 
@@ -126,23 +142,39 @@ The players' career paths over this time span are thought to consist of three st
 
 The players are selected according to the following criterion: they need to be present in the game from FIFA 15 to FIFA 23; they need to be younger than 25 and older than 22 years old, so they are indeed in the early phrase of their careers in 2015, and late phrase of their carrers in 2023. 
 
-The Sankey diagram is most appropriately implemented in D3JS. We will need the D3JS sankey library, and the knowledge of marks, channels, and the maps. 
+The Sankey diagram is most appropriately implemented in D3.js. We will need the D3JS sankey library, and the knowledge of marks, channels, and the maps. 
 
-In the end, we were able to create the Sankey diagram as shown on figure below:
+In the end, we created the Sankey diagram as shown in the figure below. However, for now, only a GIF of the diagram is displayed on the website.
 
 ![Sankey Diagram](/figure/sankey2.gif)
 
-### An Interactive Map
+###### 3. Interactive Map:
 
 We also plan to incorporate an interactive map in the design our website. The user can hover their mouse over the countries, and arrows will appear. 
 
 We haven't decided about what data to use. One idea is to show the transfer route of a player with connected arrows, another idea is to show the transfers coming in and out a country, and use the thickness or color of the arrows to signify the quantity. 
 
-This can also be implemented in D3JS. We will need the knowledge of marks, channels, maps, and also mercator projections. 
+This can also be implemented in D3.js. We will need the knowledge of marks, channels, maps, and also mercator projections. 
 
-We were able to get a working template. In this version, the arrows are pointing at 5 randomly selected countries, and this is for demonstration. It is shown on the figure below. 
+We were able to get a working template. In this version, the arrows are pointing at 5 randomly selected countries for demonstration purposes. However, we haven't added it to the website yet as its placement will depend on our data findings. It is shown in the figure below.
 
 ![Interactive Map](/figure/map.gif)
+
+###### 4. Player Full Chart: 
+
+Our goal is to visualize the career trajectories of both rising stars and aging superstars in FIFA history, similar to product displays on some online shopping websites. This will involve a time series display of each player's score growth.
+
+The visualization will primarily consist of a line plot that includes the player's level, profile, teams they've been part of, overall score, value, and a link to their detailed profile, as shown in the provided sketch:
+
+![Player Full Chart](/figure/player_full_chart.gif)
+
+We'll use D3.js for this visualization, with plans to enhance it by adding dynamic slides that depict each player's career over time, updating annually to reflect changes like team transfers. This approach will give viewers a comprehensive view of each player's development throughout their career.
+
+For now, we've created a static chart and added it as an image to the website.
+
+### Final Note
+
+Please note that this version of the website is primitive and serves as a basic skeleton for the visualizations/widgets. In addition to inserting the real data, we still need to refine elements like the color palette and margins to enhance the user interface.
 
 ## Milestone 3 (31st May, 5pm)
 
