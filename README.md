@@ -128,11 +128,11 @@ Each subsection will detail our visualizations. The tools needed to implement th
 
 - We display a player's development over time and categorize them into five skill levels. Currently, our website utilizes an [interactive linear chart from ApexCharts](https://apexcharts.com/javascript-chart-demos/line-charts/basic/), which allows us to showcase the overall rating and other relevant information for a particular year.
 
-- Additionally, we highlight the clubs a player has been associated with using an [interactive timeline chart from ApexCharts](https://apexcharts.com/javascript-chart-demos/timeline-charts/). The advantage of this type of chart is that it makes it easier to see not only the teams the player has been part of, but it also provides a direct visualization of the duration of their stay (whether long or short). Furthermore, this is useful for visualizing players who have returned to their former clubs after playing elsewhere.
+- Additionally, we highlight the clubs a player has been associated with, using an [interactive timeline chart from ApexCharts](https://apexcharts.com/javascript-chart-demos/timeline-charts/basic/). The advantage of this type of chart is that it makes it easier to see not only the teams the player has been part of, but it also provides a direct visualization of the duration of their stay (whether long or short). Furthermore, this is useful for visualizing players who have returned to their former clubs after playing elsewhere.
 
-- Lastly, we enhanced the player's profile by showcasing their skills. We have currently employed an [interactive radar chart from ApexCharts](https://apexcharts.com/javascript-chart-demos/radar-charts/) to display specific skills of a player. Given that we have skills data for each year, we are contemplating how to present relevant information without cluttering the graph.
+- Lastly, we enhanced the player's profile by showcasing their skills. We have currently employed an [interactive radar chart from ApexCharts](https://apexcharts.com/javascript-chart-demos/radar-charts/basic/) to display the specific skills of a player. Given that we have skills-data for each year, we are considering various options for presenting relevant information without cluttering the graph.
 
-- We are considering the use of additional widgets later on, but they are not necessary at the moment. For example, a player's rating is bounded between 1 and 99, making it potentially interesting to display using a [radial bar from ApexCharts](https://apexcharts.com/javascript-chart-demos/radialbar-charts/).
+- We are considering the use of additional widgets later on, but they are not necessary at the moment. For example, a player's rating is bounded between 1 and 99, making it potentially interesting to display using an [interactive radial bar chart from ApexCharts](https://apexcharts.com/javascript-chart-demos/radialbar-charts/).
 
 These widgets have been added to the website under "Player Evolution > [Click on a Player]". However, we still need to enhance them by adding logos for teams and countries.
 
@@ -140,23 +140,23 @@ These widgets have been added to the website under "Player Evolution > [Click on
 
 We tracked the serving football leagues of 720 players from 2015 to 2023, and visualized their "transfer routes" using this Sankey Diagram. 
 
-The players' career paths over this time span are thought to consist of three stages, respectively, early, middle, and late stage. So the Sankey diagram has three layers. The league showing for the early stage is simply the league the player is playing in in 2015. The league showing for the late stage is the team the player is playing in in 2023. The league showing for the mode stage is the league that he played in for the longest time during 2016~2022. This is of course a simplification, but it rules out complication from players who frequently change teams between different leagues during this time. 
+The players' career paths over this time span are thought to consist of three stages: early, middle, and late stage. So the Sankey diagram has three layers. The league showing for the early stage is simply the league the player is playing in 2015. The league showing for the late stage is the team the player is playing in 2023. The league showing for the mode stage is the league that he played in for the longest time during 2016~2022. This is of course a simplification, but it rules out complications from players who frequently change teams between different leagues during this time. 
 
-The players are selected according to the following criterion: they need to be present in the game from FIFA 15 to FIFA 23; they need to be younger than 25 and older than 22 years old, so they are indeed in the early phrase of their careers in 2015, and late phrase of their carrers in 2023. 
+The players are selected according to the following criteria: they need to be present in the game from FIFA 15 to FIFA 23; they need to be younger than 25 and older than 22 years old, so they are indeed in the early phase of their careers in 2015, and late phrase of their careers in 2023. 
 
-The Sankey diagram is most appropriately implemented in D3.js. We will need the D3JS sankey library, and the knowledge of marks, channels, and the maps. 
+The Sankey diagram is most appropriately implemented in D3.js. We will need the D3.js Sankey library, and the knowledge of marks, channels, and maps. 
 
-In the end, we created the Sankey diagram as shown in the figure below. However, for now, only a GIF of the diagram is displayed on the website.
+Finally, we created the Sankey diagram as shown in the figure below. However, for now, only a GIF of the diagram is displayed on the website.
 
 ![Sankey Diagram](/figure/sankey2.gif)
 
 ###### 3. Interactive Map:
 
-We also plan to incorporate an interactive map in the design our website. The user can hover their mouse over the countries, and arrows will appear. 
+We also plan to incorporate an interactive map in the design of our website. The user can hover their mouse over the countries, and arrows will appear. 
 
-We haven't decided about what data to use. One idea is to show the transfer route of a player with connected arrows, another idea is to show the transfers coming in and out a country, and use the thickness or color of the arrows to signify the quantity. 
+We haven't decided about what data to use. One idea is to show the transfer route of a player with connected arrows, another idea is to show the transfers coming in and out of a country, and use the thickness or color of the arrows to signify the quantity. 
 
-This can also be implemented in D3.js. We will need the knowledge of marks, channels, maps, and also mercator projections. 
+This can also be implemented in D3.js. We will need the knowledge of marks, channels, maps, and also Mercator projections. 
 
 We were able to get a working template. In this version, the arrows are pointing at 5 randomly selected countries for demonstration purposes. However, we haven't added it to the website yet as its placement will depend on our data findings. It is shown in the figure below.
 
