@@ -114,7 +114,7 @@ No member of the group has previously worked on a similar project. Therefore, th
 
 Our website, coded in React, is accessible via the link: [http://tansiq.ma:3000/](http://tansiq.ma:3000/)
 The current workflow of the site is depicted in the figure below:
-![Workflow](/figure/workflow.gif)
+![Website Workflow](/figure/website_workflow.jpeg)
 
 We have integrated several interactive visualizations; however, for the more challenging ones, we have currently embedded an image or GIF instead of the actual graph. Nevertheless, these images or graphs are our own creations.
 
@@ -166,7 +166,7 @@ Our goal is to visualize the career trajectories of both rising stars and aging 
 
 The visualization will primarily consist of a line plot that includes the player's level, profile, teams they've been part of, overall score, value, and a link to their detailed profile, as shown in the provided sketch:
 
-![Player Full Chart](/figure/player_full_chart.gif)
+![Player Full Chart](/figure/player_full_chart.jpeg)
 
 We'll use D3.js for this visualization, with plans to enhance it by adding dynamic slides that depict each player's career over time, updating annually to reflect changes like team transfers. This approach will give viewers a comprehensive view of each player's development throughout their career.
 
