@@ -112,9 +112,11 @@ No member of the group has previously worked on a similar project. Therefore, th
 
 ### Website
 
-Our website, coded in React, is accessible via the link: [http://tansiq.ma:3000/](http://tansiq.ma:3000/)
+Our website, coded in React, is accessible via the link: [http://tansiq.ma:3000/](http://tansiq.ma:3000/). The code source of the application running on the website is provided as a [zip file](/FootViz.zip).
+
 The current workflow of the site is depicted in the figure below:
 ![Website Workflow](/figure/website_workflow.jpeg)
+
 
 We have integrated several interactive visualizations; however, for the more challenging ones, we have currently embedded an image or GIF instead of the actual graph. Nevertheless, these images or graphs are our own creations.
 
