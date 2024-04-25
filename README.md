@@ -112,6 +112,37 @@ No member of the group has previously worked on a similar project. Therefore, th
 
 **10% of the final grade**
 
+### Overview
+
+This document will list the visualizations that are envisioned for the final project, and how they can be implemented. More specifically, the tools needed to implement the features will be suggested, and the core (and potential extension) ideas will be discussed. 
+
+Each subsection will be detailing one visualization. 
+
+### Sankey Diagram Showing Transfers Between Different Leagues
+
+We tracked the serving football leagues of 720 players from 2015 to 2023, and visualized their "transfer routes" using this Sankey Diagram. 
+
+The players' career paths over this time span are thought to consist of three stages, respectively, early, middle, and late stage. So the Sankey diagram has three layers. The league showing for the early stage is simply the league the player is playing in in 2015. The league showing for the late stage is the team the player is playing in in 2023. The league showing for the mode stage is the league that he played in for the longest time during 2016~2022. This is of course a simplification, but it rules out complication from players who frequently change teams between different leagues during this time. 
+
+The players are selected according to the following criterion: they need to be present in the game from FIFA 15 to FIFA 23; they need to be younger than 25 and older than 22 years old, so they are indeed in the early phrase of their careers in 2015, and late phrase of their carrers in 2023. 
+
+The Sankey diagram is most appropriately implemented in D3JS. We will need the D3JS sankey library, and the knowledge of marks, channels, and the maps. 
+
+In the end, we were able to create the Sankey diagram as shown on figure below:
+
+![Sankey Diagram](/figure/sankey2.gif)
+
+### An Interactive Map
+
+We also plan to incorporate an interactive map in the design our website. The user can hover their mouse over the countries, and arrows will appear. 
+
+We haven't decided about what data to use. One idea is to show the transfer route of a player with connected arrows, another idea is to show the transfers coming in and out a country, and use the thickness or color of the arrows to signify the quantity. 
+
+This can also be implemented in D3JS. We will need the knowledge of marks, channels, maps, and also mercator projections. 
+
+We were able to get a working template. In this version, the arrows are pointing at 5 randomly selected countries, and this is for demonstration. It is shown on the figure below. 
+
+![Interactive Map](/figure/map.gif)
 
 ## Milestone 3 (31st May, 5pm)
 
