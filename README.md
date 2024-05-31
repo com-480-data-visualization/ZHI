@@ -203,7 +203,7 @@ If you want to view the website, simply open the following link: [http://tansiq.
 
 To evaluate the project's code, please follow these steps:
 
-- Unzip the file `FootViz.zip` to access the source code of the application running on the website. Once unzipped, it includes a `README.md` that describes how to run the script, if needed.
+- Unzip the file `footviz.zip` to access the source code of the application running on the website. Once unzipped, it includes a `README.md` that describes how to run the script, if needed.
 - Explore the notebooks in the `notebooks` folder. These notebooks have been pre-run with outputs generated, so you do not need to run them again. However, if you wish to run them, please first download the required datasets from [this Kaggle link](https://www.kaggle.com/datasets/stefanoleone992/fifa-23-complete-player-dataset) and place them in the `data/` folder, structured as follows:
 
 ```
