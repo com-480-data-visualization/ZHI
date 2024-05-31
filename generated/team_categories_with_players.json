@@ -1,0 +1,680 @@
+{
+    "rising_stars": [
+        {
+            "team_name": "Ajax",
+            "team_url": "https://cdn.sofifa.net/meta/team/629/240.png",
+            "league_name": "Eredivisie",
+            "league_url": "https://cdn.sofifa.net/flags/nl@2x.png",
+            "players": [
+                {
+                    "team_name": "Ajax",
+                    "short_name": "M. de Ligt",
+                    "overall": 85,
+                    "age": 18,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/235/243/19_120.png"
+                },
+                {
+                    "team_name": "Ajax",
+                    "short_name": "A. Onana",
+                    "overall": 85,
+                    "age": 23,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/226/753/20_120.png"
+                },
+                {
+                    "team_name": "Ajax",
+                    "short_name": "F. de Jong",
+                    "overall": 84,
+                    "age": 21,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/228/702/19_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "PSV",
+            "team_url": "https://cdn.sofifa.net/meta/team/682/240.png",
+            "league_name": "Eredivisie",
+            "league_url": "https://cdn.sofifa.net/flags/nl@2x.png",
+            "players": [
+                {
+                    "team_name": "PSV",
+                    "short_name": "H. Lozano",
+                    "overall": 82,
+                    "age": 22,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/221/992/19_120.png"
+                },
+                {
+                    "team_name": "PSV",
+                    "short_name": "S. Bergwijn",
+                    "overall": 81,
+                    "age": 20,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/225/953/19_120.png"
+                },
+                {
+                    "team_name": "PSV",
+                    "short_name": "C. Gakpo",
+                    "overall": 81,
+                    "age": 22,
+                    "year": 2022,
+                    "player_face_url": "https://cdn.sofifa.net/players/242/516/22_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Olympique Lyonnais",
+            "team_url": "https://cdn.sofifa.net/meta/team/79/240.png",
+            "league_name": "Ligue 1",
+            "league_url": "https://cdn.sofifa.net/flags/fr@2x.png",
+            "players": [
+                {
+                    "team_name": "Olympique Lyonnais",
+                    "short_name": "N. Fekir",
+                    "overall": 84,
+                    "age": 23,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/216/594/18_120.png"
+                },
+                {
+                    "team_name": "Olympique Lyonnais",
+                    "short_name": "A. Lacazette",
+                    "overall": 82,
+                    "age": 23,
+                    "year": 2015,
+                    "player_face_url": "https://cdn.sofifa.net/players/193/301/15_120.png"
+                },
+                {
+                    "team_name": "Olympique Lyonnais",
+                    "short_name": "M. Demb\u00e9l\u00e9",
+                    "overall": 82,
+                    "age": 22,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/211/591/20_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Sporting CP",
+            "team_url": "https://cdn.sofifa.net/meta/team/58/240.png",
+            "league_name": "Primeira Liga",
+            "league_url": "https://cdn.sofifa.net/flags/pt@2x.png",
+            "players": [
+                {
+                    "team_name": "Sporting CP",
+                    "short_name": "Bruno Fernandes",
+                    "overall": 85,
+                    "age": 23,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/212/198/19_120.png"
+                },
+                {
+                    "team_name": "Sporting CP",
+                    "short_name": "Gelson Martins",
+                    "overall": 82,
+                    "age": 22,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/227/055/18_120.png"
+                },
+                {
+                    "team_name": "Sporting CP",
+                    "short_name": "Pedro Porro",
+                    "overall": 82,
+                    "age": 22,
+                    "year": 2023,
+                    "player_face_url": "https://cdn.sofifa.net/players/243/576/23_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Bayer 04 Leverkusen",
+            "team_url": "https://cdn.sofifa.net/meta/team/3321/240.png",
+            "league_name": "Bundesliga",
+            "league_url": "https://cdn.sofifa.net/flags/de@2x.png",
+            "players": [
+                {
+                    "team_name": "Bayer 04 Leverkusen",
+                    "short_name": "M. Diaby",
+                    "overall": 84,
+                    "age": 22,
+                    "year": 2023,
+                    "player_face_url": "https://cdn.sofifa.net/players/241/852/23_120.png"
+                },
+                {
+                    "team_name": "Bayer 04 Leverkusen",
+                    "short_name": "K. Havertz",
+                    "overall": 84,
+                    "age": 20,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/235/790/20_120.png"
+                },
+                {
+                    "team_name": "Bayer 04 Leverkusen",
+                    "short_name": "B. Leno",
+                    "overall": 83,
+                    "age": 23,
+                    "year": 2016,
+                    "player_face_url": "https://cdn.sofifa.net/players/192/563/16_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "RB Leipzig",
+            "team_url": "https://cdn.sofifa.net/meta/team/277/240.png",
+            "league_name": "Bundesliga",
+            "league_url": "https://cdn.sofifa.net/flags/de@2x.png",
+            "players": [
+                {
+                    "team_name": "RB Leipzig",
+                    "short_name": "T. Werner",
+                    "overall": 86,
+                    "age": 23,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/212/188/20_120.png"
+                },
+                {
+                    "team_name": "RB Leipzig",
+                    "short_name": "C. Nkunku",
+                    "overall": 86,
+                    "age": 23,
+                    "year": 2022,
+                    "player_face_url": "https://cdn.sofifa.net/players/232/411/22_120.png"
+                },
+                {
+                    "team_name": "RB Leipzig",
+                    "short_name": "N. Ke\u00efta",
+                    "overall": 83,
+                    "age": 22,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/220/971/18_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "FC Barcelona",
+            "team_url": "https://cdn.sofifa.net/meta/team/83/240.png",
+            "league_name": "La Liga",
+            "league_url": "https://cdn.sofifa.net/flags/es@2x.png",
+            "players": [
+                {
+                    "team_name": "FC Barcelona",
+                    "short_name": "Neymar",
+                    "overall": 90,
+                    "age": 23,
+                    "year": 2016,
+                    "player_face_url": "https://cdn.sofifa.net/players/190/871/16_120.png"
+                },
+                {
+                    "team_name": "FC Barcelona",
+                    "short_name": "F. de Jong",
+                    "overall": 86,
+                    "age": 23,
+                    "year": 2021,
+                    "player_face_url": "https://cdn.sofifa.net/players/228/702/21_120.png"
+                },
+                {
+                    "team_name": "FC Barcelona",
+                    "short_name": "Pedri",
+                    "overall": 85,
+                    "age": 19,
+                    "year": 2023,
+                    "player_face_url": "https://cdn.sofifa.net/players/251/854/23_120.png"
+                }
+            ]
+        }
+    ],
+    "peak_players": [
+        {
+            "team_name": "Liverpool",
+            "team_url": "https://cdn.sofifa.net/meta/team/8/240.png",
+            "league_name": "Premier League",
+            "league_url": "https://cdn.sofifa.net/flags/gb-eng@2x.png",
+            "players": [
+                {
+                    "team_name": "Liverpool",
+                    "short_name": "M. Salah",
+                    "overall": 91,
+                    "age": 29,
+                    "year": 2022,
+                    "player_face_url": "https://cdn.sofifa.net/players/209/331/22_120.png"
+                },
+                {
+                    "team_name": "Liverpool",
+                    "short_name": "V. van Dijk",
+                    "overall": 91,
+                    "age": 27,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/203/376/20_120.png"
+                },
+                {
+                    "team_name": "Liverpool",
+                    "short_name": "S. Man\u00e9",
+                    "overall": 90,
+                    "age": 27,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/208/722/20_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Napoli",
+            "team_url": "https://cdn.sofifa.net/meta/team/597/240.png",
+            "league_name": "Serie A",
+            "league_url": "https://cdn.sofifa.net/flags/it@2x.png",
+            "players": [
+                {
+                    "team_name": "Napoli",
+                    "short_name": "K. Koulibaly",
+                    "overall": 88,
+                    "age": 29,
+                    "year": 2021,
+                    "player_face_url": "https://cdn.sofifa.net/players/201/024/21_120.png"
+                },
+                {
+                    "team_name": "Napoli",
+                    "short_name": "L. Insigne",
+                    "overall": 87,
+                    "age": 26,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/198/219/18_120.png"
+                },
+                {
+                    "team_name": "Napoli",
+                    "short_name": "M. Hamšík",
+                    "overall": 87,
+                    "age": 29,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/171/877/18_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Chelsea",
+            "team_url": "https://cdn.sofifa.net/meta/team/18/240.png",
+            "league_name": "Premier League",
+            "league_url": "https://cdn.sofifa.net/flags/gb-eng@2x.png",
+            "players": [
+                {
+                    "team_name": "Chelsea",
+                    "short_name": "E. Hazard",
+                    "overall": 91,
+                    "age": 26,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/183/277/18_120.png"
+                },
+                {
+                    "team_name": "Chelsea",
+                    "short_name": "N. Kant\u00e9",
+                    "overall": 89,
+                    "age": 28,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/215/914/20_120.png"
+                },
+                {
+                    "team_name": "Chelsea",
+                    "short_name": "T. Courtois",
+                    "overall": 89,
+                    "age": 25,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/192/119/18_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Manchester United",
+            "team_url": "https://cdn.sofifa.net/meta/team/14/240.png",
+            "league_name": "Premier League",
+            "league_url": "https://cdn.sofifa.net/flags/gb-eng@2x.png",
+            "players": [
+                {
+                    "team_name": "Manchester United",
+                    "short_name": "De Gea",
+                    "overall": 91,
+                    "age": 26,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/193/080/18_120.png"
+                },
+                {
+                    "team_name": "Manchester United",
+                    "short_name": "P. Pogba",
+                    "overall": 88,
+                    "age": 24,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/195/864/18_120.png"
+                },
+                {
+                    "team_name": "Manchester United",
+                    "short_name": "A. S\u00e1nchez",
+                    "overall": 88,
+                    "age": 28,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/184/941/18_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Tottenham Hotspur",
+            "team_url": "https://cdn.sofifa.net/meta/team/6/240.png",
+            "league_name": "Premier League",
+            "league_url": "https://cdn.sofifa.net/flags/gb-eng@2x.png",
+            "players": [
+                {
+                    "team_name": "Tottenham Hotspur",
+                    "short_name": "H. Kane",
+                    "overall": 90,
+                    "age": 24,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/202/126/19_120.png"
+                },
+                {
+                    "team_name": "Tottenham Hotspur",
+                    "short_name": "H. Son",
+                    "overall": 89,
+                    "age": 28,
+                    "year": 2022,
+                    "player_face_url": "https://cdn.sofifa.net/players/200/104/22_120.png"
+                },
+                {
+                    "team_name": "Tottenham Hotspur",
+                    "short_name": "C. Eriksen",
+                    "overall": 88,
+                    "age": 25,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/190/460/18_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "West Ham United",
+            "team_url": "https://cdn.sofifa.net/meta/team/1/240.png",
+            "league_name": "Premier League",
+            "league_url": "https://cdn.sofifa.net/flags/gb-eng@2x.png",
+            "players": [
+                {
+                    "team_name": "West Ham United",
+                    "short_name": "Felipe Anderson",
+                    "overall": 84,
+                    "age": 25,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/201/995/19_120.png"
+                },
+                {
+                    "team_name": "West Ham United",
+                    "short_name": "D. Payet",
+                    "overall": 83,
+                    "age": 28,
+                    "year": 2016,
+                    "player_face_url": "https://cdn.sofifa.net/players/177/388/16_120.png"
+                },
+                {
+                    "team_name": "West Ham United",
+                    "short_name": "S. Haller",
+                    "overall": 82,
+                    "age": 25,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/205/693/20_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Manchester City",
+            "team_url": "https://cdn.sofifa.net/meta/team/9/240.png",
+            "league_name": "Premier League",
+            "league_url": "https://cdn.sofifa.net/flags/gb-eng@2x.png",
+            "players": [
+                {
+                    "team_name": "Manchester City",
+                    "short_name": "K. De Bruyne",
+                    "overall": 91,
+                    "age": 27,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/192/985/19_120.png"
+                },
+                {
+                    "team_name": "Manchester City",
+                    "short_name": "Ederson",
+                    "overall": 89,
+                    "age": 27,
+                    "year": 2022,
+                    "player_face_url": "https://cdn.sofifa.net/players/210/257/22_120.png"
+                },
+                {
+                    "team_name": "Manchester City",
+                    "short_name": "S. Ag\u00fcero",
+                    "overall": 89,
+                    "age": 29,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/153/079/18_120.png"
+                }
+            ]
+        }
+    ],
+    "falling_stars": [
+        {
+            "team_name": "Deportivo Pasto",
+            "team_url": "https://cdn.sofifa.net/meta/team/12832/240.png",
+            "league_name": "Categor\u00eda Primera A",
+            "league_url": "https://cdn.sofifa.net/flags/co@2x.png",
+            "players": [
+                {
+                    "team_name": "Deportivo Pasto",
+                    "short_name": "M. Casierra",
+                    "overall": 70,
+                    "age": 31,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/214/118/18_120.png"
+                },
+                {
+                    "team_name": "Deportivo Pasto",
+                    "short_name": "E. Hern\u00e1ndez",
+                    "overall": 70,
+                    "age": 31,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/221/463/18_120.png"
+                },
+                {
+                    "team_name": "Deportivo Pasto",
+                    "short_name": "J. Lopera",
+                    "overall": 70,
+                    "age": 30,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/214/106/18_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "River Plate",
+            "team_url": "https://cdn.sofifa.net/meta/team/10002/240.png",
+            "league_name": "Liga Profesional de F\u00fatbol",
+            "league_url": "https://cdn.sofifa.net/flags/ar@2x.png",
+            "players": [
+                {
+                    "team_name": "River Plate",
+                    "short_name": "L. Pisculichi",
+                    "overall": 75,
+                    "age": 32,
+                    "year": 2017,
+                    "player_face_url": "https://cdn.sofifa.net/players/158/969/17_120.png"
+                },
+                {
+                    "team_name": "River Plate",
+                    "short_name": "R. Aliendro",
+                    "overall": 75,
+                    "age": 31,
+                    "year": 2023,
+                    "player_face_url": "https://cdn.sofifa.net/players/233/029/23_120.png"
+                },
+                {
+                    "team_name": "River Plate",
+                    "short_name": "J. Saviola",
+                    "overall": 75,
+                    "age": 33,
+                    "year": 2016,
+                    "player_face_url": "https://cdn.sofifa.net/players/001/803/16_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Universidad Cat\u00f3lica",
+            "team_url": "https://cdn.sofifa.net/meta/team/2710/240.png",
+            "league_name": "Primera Division",
+            "league_url": "https://cdn.sofifa.net/flags/cl@2x.png",
+            "players": [
+                {
+                    "team_name": "Universidad Cat\u00f3lica",
+                    "short_name": "J. Fuenzalida",
+                    "overall": 75,
+                    "age": 31,
+                    "year": 2017,
+                    "player_face_url": "https://cdn.sofifa.net/players/196/069/17_120.png"
+                },
+                {
+                    "team_name": "Universidad Cat\u00f3lica",
+                    "short_name": "F. Zampedri",
+                    "overall": 75,
+                    "age": 33,
+                    "year": 2022,
+                    "player_face_url": "https://cdn.sofifa.net/players/232/670/22_120.png"
+                },
+                {
+                    "team_name": "Universidad Cat\u00f3lica",
+                    "short_name": "L. Aued",
+                    "overall": 75,
+                    "age": 31,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/206/152/19_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Antalyaspor",
+            "team_url": "https://cdn.sofifa.net/meta/team/81/240.png",
+            "league_name": "S\u00fcper Lig",
+            "league_url": "https://cdn.sofifa.net/flags/tr@2x.png",
+            "players": [
+                {
+                    "team_name": "Antalyaspor",
+                    "short_name": "Luiz Adriano",
+                    "overall": 75,
+                    "age": 35,
+                    "year": 2023,
+                    "player_face_url": "https://cdn.sofifa.net/players/180/826/23_120.png"
+                },
+                {
+                    "team_name": "Antalyaspor",
+                    "short_name": "A. Poli",
+                    "overall": 75,
+                    "age": 31,
+                    "year": 2022,
+                    "player_face_url": "https://cdn.sofifa.net/players/185/174/22_120.png"
+                },
+                {
+                    "team_name": "Antalyaspor",
+                    "short_name": "L. Podolski",
+                    "overall": 74,
+                    "age": 35,
+                    "year": 2021,
+                    "player_face_url": "https://cdn.sofifa.net/players/150/516/21_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Perth Glory",
+            "team_url": "https://cdn.sofifa.net/meta/team/300/240.png",
+            "league_name": "A-League Men",
+            "league_url": "https://cdn.sofifa.net/flags/au@2x.png",
+            "players": [
+                {
+                    "team_name": "Perth Glory",
+                    "short_name": "Diego Castro",
+                    "overall": 75,
+                    "age": 34,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/147/006/18_120.png"
+                },
+                {
+                    "team_name": "Perth Glory",
+                    "short_name": "B. Fornaroli",
+                    "overall": 74,
+                    "age": 31,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/189/225/20_120.png"
+                },
+                {
+                    "team_name": "Perth Glory",
+                    "short_name": "D. Sturridge",
+                    "overall": 72,
+                    "age": 31,
+                    "year": 2022,
+                    "player_face_url": "https://cdn.sofifa.net/players/171/833/22_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Rosario Central",
+            "team_url": "https://cdn.sofifa.net/meta/team/3365/240.png",
+            "league_name": "Liga Profesional de F\u00fatbol",
+            "league_url": "https://cdn.sofifa.net/flags/ar@2x.png",
+            "players": [
+                {
+                    "team_name": "Rosario Central",
+                    "short_name": "M. Ruben",
+                    "overall": 75,
+                    "age": 34,
+                    "year": 2022,
+                    "player_face_url": "https://cdn.sofifa.net/players/165/560/22_120.png"
+                },
+                {
+                    "team_name": "Rosario Central",
+                    "short_name": "M. Caruzzo",
+                    "overall": 75,
+                    "age": 33,
+                    "year": 2019,
+                    "player_face_url": "https://cdn.sofifa.net/players/190/576/19_120.png"
+                },
+                {
+                    "team_name": "Rosario Central",
+                    "short_name": "J. Pinola",
+                    "overall": 75,
+                    "age": 33,
+                    "year": 2017,
+                    "player_face_url": "https://cdn.sofifa.net/players/146/963/17_120.png"
+                }
+            ]
+        },
+        {
+            "team_name": "Western Sydney Wanderers",
+            "team_url": "https://cdn.sofifa.net/meta/team/1264/240.png",
+            "league_name": "A-League Men",
+            "league_url": "https://cdn.sofifa.net/flags/au@2x.png",
+            "players": [
+                {
+                    "team_name": "Western Sydney Wanderers",
+                    "short_name": "N. M\u00fcller",
+                    "overall": 75,
+                    "age": 31,
+                    "year": 2020,
+                    "player_face_url": "https://cdn.sofifa.net/players/183/871/20_120.png"
+                },
+                {
+                    "team_name": "Western Sydney Wanderers",
+                    "short_name": "Cejudo",
+                    "overall": 74,
+                    "age": 33,
+                    "year": 2018,
+                    "player_face_url": "https://cdn.sofifa.net/players/146/377/18_120.png"
+                },
+                {
+                    "team_name": "Western Sydney Wanderers",
+                    "short_name": "P. Schwegler",
+                    "overall": 74,
+                    "age": 33,
+                    "year": 2021,
+                    "player_face_url": "https://cdn.sofifa.net/players/158/905/21_120.png"
+                }
+            ]
+        }
+    ]
+}

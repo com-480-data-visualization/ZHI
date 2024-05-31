@@ -1,19 +1,22 @@
-team_name,short_name,overall,age,fifa_version,player_face_url
-Ajax,M. Stekelenburg,75,38,22,https://cdn.sofifa.net/players/002/147/22_120.png
-Ajax,K. Huntelaar,75,35,20,https://cdn.sofifa.net/players/148/803/20_120.png
-Ajax,J. Heitinga,73,31,16,https://cdn.sofifa.net/players/049/425/16_120.png
-PSV,André Ramalho,75,30,23,https://cdn.sofifa.net/players/210/007/23_120.png
-PSV,K. Mitroglou,75,31,20,https://cdn.sofifa.net/players/183/483/20_120.png
-PSV,I. Afellay,74,33,20,https://cdn.sofifa.net/players/158/372/20_120.png
-Olympique Lyonnais,D. Da Silva,75,33,22,https://cdn.sofifa.net/players/179/789/22_120.png
-Olympique Lyonnais,J. Morel,75,31,16,https://cdn.sofifa.net/players/139/860/16_120.png
-Olympique Lyonnais,H. Bedimo,75,30,15,https://cdn.sofifa.net/players/150/565/15_120.png
-Sporting CP,I. Slimani,75,33,22,https://cdn.sofifa.net/players/217/699/22_120.png
-Sporting CP,Y. Bolasie,75,30,20,https://cdn.sofifa.net/players/189/157/20_120.png
-Sporting CP,R. Salin,74,33,19,https://cdn.sofifa.net/players/150/477/19_120.png
-Bayer 04 Leverkusen,A. Lunev,75,30,23,https://cdn.sofifa.net/players/229/909/23_120.png
-Bayer 04 Leverkusen,R. Özcan,75,34,19,https://cdn.sofifa.net/players/152/211/19_120.png
-Bayer 04 Leverkusen,S. Kießling,75,33,18,https://cdn.sofifa.net/players/137/262/18_120.png
-RB Leipzig,M. Compper,75,31,17,https://cdn.sofifa.net/players/170/231/17_120.png
-RB Leipzig,J. Blaswich,74,31,23,https://cdn.sofifa.net/players/204/092/23_120.png
-RB Leipzig,P. Tschauner,72,33,20,https://cdn.sofifa.net/players/158/777/20_120.png
+team_name,short_name,overall,age,year,player_face_url
+Deportivo Pasto,M. Casierra,70,31,2018,https://cdn.sofifa.net/players/214/118/18_120.png
+Deportivo Pasto,E. Hernández,70,31,2018,https://cdn.sofifa.net/players/221/463/18_120.png
+Deportivo Pasto,J. Lopera,70,30,2018,https://cdn.sofifa.net/players/214/106/18_120.png
+River Plate,L. Pisculichi,75,32,2017,https://cdn.sofifa.net/players/158/969/17_120.png
+River Plate,R. Aliendro,75,31,2023,https://cdn.sofifa.net/players/233/029/23_120.png
+River Plate,J. Saviola,75,33,2016,https://cdn.sofifa.net/players/001/803/16_120.png
+Universidad Católica,J. Fuenzalida,75,31,2017,https://cdn.sofifa.net/players/196/069/17_120.png
+Universidad Católica,F. Zampedri,75,33,2022,https://cdn.sofifa.net/players/232/670/22_120.png
+Universidad Católica,L. Aued,75,31,2019,https://cdn.sofifa.net/players/206/152/19_120.png
+Antalyaspor,Luiz Adriano,75,35,2023,https://cdn.sofifa.net/players/180/826/23_120.png
+Antalyaspor,A. Poli,75,31,2022,https://cdn.sofifa.net/players/185/174/22_120.png
+Antalyaspor,L. Podolski,74,35,2021,https://cdn.sofifa.net/players/150/516/21_120.png
+Perth Glory,Diego Castro,75,34,2018,https://cdn.sofifa.net/players/147/006/18_120.png
+Perth Glory,B. Fornaroli,74,31,2020,https://cdn.sofifa.net/players/189/225/20_120.png
+Perth Glory,D. Sturridge,72,31,2022,https://cdn.sofifa.net/players/171/833/22_120.png
+Rosario Central,M. Ruben,75,34,2022,https://cdn.sofifa.net/players/165/560/22_120.png
+Rosario Central,M. Caruzzo,75,33,2019,https://cdn.sofifa.net/players/190/576/19_120.png
+Rosario Central,J. Pinola,75,33,2017,https://cdn.sofifa.net/players/146/963/17_120.png
+Western Sydney Wanderers,N. Müller,75,31,2020,https://cdn.sofifa.net/players/183/871/20_120.png
+Western Sydney Wanderers,Cejudo,74,33,2018,https://cdn.sofifa.net/players/146/377/18_120.png
+Western Sydney Wanderers,P. Schwegler,74,33,2021,https://cdn.sofifa.net/players/158/905/21_120.png

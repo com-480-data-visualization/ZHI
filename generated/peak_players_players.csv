@@ -1,22 +1,22 @@
-team_name,short_name,overall,age,fifa_version,player_face_url
-Ajax,H. Ziyech,86,26,20,https://cdn.sofifa.net/players/208/670/20_120.png
-Ajax,D. Tadić,84,29,19,https://cdn.sofifa.net/players/199/434/19_120.png
-Ajax,A. Onana,84,24,21,https://cdn.sofifa.net/players/226/753/21_120.png
-PSV,L. de Jong,82,27,19,https://cdn.sofifa.net/players/189/805/19_120.png
-PSV,M. Götze,81,29,22,https://cdn.sofifa.net/players/192/318/22_120.png
-PSV,A. Guardado,81,28,16,https://cdn.sofifa.net/players/171/897/16_120.png
-Olympique Lyonnais,A. Lopes,85,27,19,https://cdn.sofifa.net/players/199/482/19_120.png
-Olympique Lyonnais,A. Lacazette,85,25,17,https://cdn.sofifa.net/players/193/301/17_120.png
-Olympique Lyonnais,M. Depay,84,25,20,https://cdn.sofifa.net/players/202/556/20_120.png
-Sporting CP,Rui Patrício,83,28,17,https://cdn.sofifa.net/players/178/005/17_120.png
-Sporting CP,Adrien Silva,83,27,17,https://cdn.sofifa.net/players/184/826/17_120.png
-Sporting CP,William Carvalho,83,24,17,https://cdn.sofifa.net/players/207/566/17_120.png
-Bayer 04 Leverkusen,B. Leno,86,24,17,https://cdn.sofifa.net/players/192/563/17_120.png
-Bayer 04 Leverkusen,L. Hrádecký,84,28,19,https://cdn.sofifa.net/players/190/941/19_120.png
-Bayer 04 Leverkusen,P. Schick,84,26,23,https://cdn.sofifa.net/players/234/236/23_120.png
-RB Leipzig,C. Nkunku,86,24,23,https://cdn.sofifa.net/players/232/411/23_120.png
-RB Leipzig,P. Gulácsi,85,29,20,https://cdn.sofifa.net/players/185/122/20_120.png
-RB Leipzig,M. Sabitzer,84,26,21,https://cdn.sofifa.net/players/204/923/21_120.png
-FC Barcelona,L. Messi,94,28,16,https://cdn.sofifa.net/players/158/023/16_120.png
-FC Barcelona,L. Suárez,92,29,17,https://cdn.sofifa.net/players/176/580/17_120.png
-FC Barcelona,Neymar,92,24,17,https://cdn.sofifa.net/players/190/871/17_120.png
+team_name,short_name,overall,age,year,player_face_url
+Liverpool,M. Salah,91,29,2022,https://cdn.sofifa.net/players/209/331/22_120.png
+Liverpool,V. van Dijk,91,27,2020,https://cdn.sofifa.net/players/203/376/20_120.png
+Liverpool,S. Mané,90,27,2020,https://cdn.sofifa.net/players/208/722/20_120.png
+Napoli,K. Koulibaly,88,29,2021,https://cdn.sofifa.net/players/201/024/21_120.png
+Napoli,L. Insigne,87,26,2018,https://cdn.sofifa.net/players/198/219/18_120.png
+Napoli,M. Hamšík,87,29,2018,https://cdn.sofifa.net/players/171/877/18_120.png
+Chelsea,E. Hazard,91,26,2018,https://cdn.sofifa.net/players/183/277/18_120.png
+Chelsea,N. Kanté,89,28,2020,https://cdn.sofifa.net/players/215/914/20_120.png
+Chelsea,T. Courtois,89,25,2018,https://cdn.sofifa.net/players/192/119/18_120.png
+Manchester United,De Gea,91,26,2018,https://cdn.sofifa.net/players/193/080/18_120.png
+Manchester United,P. Pogba,88,24,2018,https://cdn.sofifa.net/players/195/864/18_120.png
+Manchester United,A. Sánchez,88,28,2018,https://cdn.sofifa.net/players/184/941/18_120.png
+Tottenham Hotspur,H. Kane,90,24,2019,https://cdn.sofifa.net/players/202/126/19_120.png
+Tottenham Hotspur,H. Son,89,28,2022,https://cdn.sofifa.net/players/200/104/22_120.png
+Tottenham Hotspur,C. Eriksen,88,25,2018,https://cdn.sofifa.net/players/190/460/18_120.png
+West Ham United,Felipe Anderson,84,25,2019,https://cdn.sofifa.net/players/201/995/19_120.png
+West Ham United,D. Payet,83,28,2016,https://cdn.sofifa.net/players/177/388/16_120.png
+West Ham United,S. Haller,82,25,2020,https://cdn.sofifa.net/players/205/693/20_120.png
+Manchester City,K. De Bruyne,91,27,2019,https://cdn.sofifa.net/players/192/985/19_120.png
+Manchester City,Ederson,89,27,2022,https://cdn.sofifa.net/players/210/257/22_120.png
+Manchester City,S. Agüero,89,29,2018,https://cdn.sofifa.net/players/153/079/18_120.png
