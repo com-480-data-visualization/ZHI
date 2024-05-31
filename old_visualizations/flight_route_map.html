@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="http://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+<!-- Create an element where the map will take place -->
+<svg id="my_dataviz" width="1500" height="1125">
+  <defs>
+    <marker id="arrowhead" markerWidth="5" markerHeight="4" 
+            refX="0" refY="2" orient="auto">
+      <polygon points="0 0, 5 2, 0 4" fill="#333333" />
+    </marker>
+  </defs>
+</svg>
+
+<script>
+// The svg
+var svg = d3.select("svg"),
+  width = +svg.attr("width"),
+  height = +svg.attr("height");
+
+// Map and projection
+var path = d3.geoPath();
+var projection = d3.geoMercator()
+  .scale(200)
+  .center([0,0])
+  .translate([width / 2, height / 2]);
+
+// Data and color scale
+var data = d3.map();
+var colorScale = d3.scaleThreshold()
+  .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
+  .range(d3.schemeBlues[7]);
+
+// Load external data and boot
+d3.queue()
+  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+  .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
+  .await(ready);
+
+function ready(error, topo) {
+  if (error) throw error;
+
+  let mouseOver = function(d) {
+    // Highlight source country by changing fill color to black
+    d3.selectAll(".Country")
+      .transition()
+      .duration(200)
+      .style("opacity", .5)
+      .style("stroke", "transparent")
+      .attr("fill", "black")
+      .filter(function(country) {
+        return country.id === d.id;
+      })
+      .style("opacity", 1)
+      .style("stroke", "black");
+
+    // var countryName = countryCodesToNames[d.id] || "Country not found";
+    var countryName = d.properties.name;
+    console.log(countryName);
+
+    // var destinations = getRandomDestinations(d, 5, topo);
+    //console.log(destinations); // Log destinations to verify
+
+    var destinationNames = topDestinationCountries[countryName] || [];
+
+    // Convert destination country names to GeoFeature objects using topo.features (d)
+    var destinations = destinationNames.map(function(name) {
+      return topo.features.find(function(feature) {
+        return feature.properties.name === name;
+      });
+    }).filter(function(feature) {
+      return feature !== undefined;
+    });
+
+    console.log(destinations);
+
+    drawArrows(d, destinations, topo);
+
+    // Highlight destination countries by changing fill color to red
+    svg.selectAll(".Country")
+      .filter(function(country) {
+        return destinations.some(dest => dest.id === country.id);
+      })
+      .transition()
+      .duration(200)
+      .attr("fill", "red");
+}
+
+let mouseLeave = function(d) {
+  // Restore the original style of all countries
+  d3.selectAll(".Country")
+    .transition()
+    .duration(200)
+    .style("opacity", .8)
+    .style("stroke", "transparent")
+    .attr("fill", function(d) {
+      if (countriesToHighlight.includes(d.properties.name)) {
+          return "green"; // Change the fill color to green
+        } else {
+          return colorScale(d.total); // Otherwise, use the color scale
+        }
+    });
+
+  svg.selectAll(".arrow").remove();
+}
+
+  // Draw the map
+  svg.append("g")
+    .selectAll("path")
+    .data(topo.features)
+    .enter()
+    .append("path")
+      // draw each country
+      .attr("d", d3.geoPath()
+        .projection(projection)
+      )
+      // set the color of each country
+      .attr("fill", function (d) {
+        d.total = data.get(d.id) || 0;
+        // Check if the current country is in the list of countries to highlight
+        if (countriesToHighlight.includes(d.properties.name)) {
+          return "green"; // Change the fill color to green
+        } else {
+          return colorScale(d.total); // Otherwise, use the color scale
+        }
+      })
+      .style("stroke", "transparent")
+      .attr("class", function(d){ return "Country" } )
+      .style("opacity", .8)
+      .on("mouseover", mouseOver )
+      .on("mouseleave", mouseLeave )
+}
+
+function drawArrows(source, destinations, topo) {
+  var sourceCentroid = d3.geoCentroid(source);
+  var sourceCoords = projection(sourceCentroid);
+  
+  svg.selectAll(".arrow")
+    .data(destinations)
+    .enter()
+    .append("line")
+      .attr("class", "arrow")
+      .attr("x1", sourceCoords[0])
+      .attr("y1", sourceCoords[1])
+      .attr("x2", function(d) {
+        var destCentroid = d3.geoCentroid(d);
+        var destCoords = projection(destCentroid);
+        return destCoords[0];
+      })
+      .attr("y2", function(d) {
+        var destCentroid = d3.geoCentroid(d);
+        var destCoords = projection(destCentroid);
+        return destCoords[1];
+      })
+      .attr("marker-end", "url(#arrowhead)")
+      .attr("stroke", "#333333") // Light grey color
+      .attr("stroke-width", 2);
+}
+
+function getRandomDestinations(source, count, topo) {
+  var destinations = [];
+  var features = topo.features.filter(function(d) { return d.id !== source.id; });
+  for (var i = 0; i < count; i++) {
+    var randomIndex = Math.floor(Math.random() * features.length);
+    destinations.push(features[randomIndex]);
+  }
+  return destinations;
+}
+
+const countryNameMap = {
+  "Antigua and Barbuda": "ATG",
+  "Algeria": "DZA",
+  "Azerbaijan": "AZE",
+  "Albania": "ALB",
+  "Armenia": "ARM",
+  "Angola": "AGO",
+  "American Samoa": "ASM",
+  "Argentina": "ARG",
+  "Australia": "AUS",
+  "Bahrain": "BHR",
+  "Barbados": "BRB",
+  "Bermuda": "BMU",
+  "Bahamas": "BHS",
+  "Bangladesh": "BGD",
+  "Belize": "BLZ",
+  "Bosnia and Herzegovina": "BIH",
+  "Bolivia": "BOL",
+  "Burma": "MMR",
+  "Benin": "BEN",
+  "Solomon Islands": "SLB",
+  "Brazil": "BRA",
+  "Bulgaria": "BGR",
+  "Brunei Darussalam": "BRN",
+  "Canada": "CAN",
+  "Cambodia": "KHM",
+  "Sri Lanka": "LKA",
+  "Congo": "COG",
+  "Democratic Republic of the Congo": "COD",
+  "Burundi": "BDI",
+  "China": "CHN",
+  "Afghanistan": "AFG",
+  "Bhutan": "BTN",
+  "Chile": "CHL",
+  "Cayman Islands": "CYM",
+  "Cameroon": "CMR",
+  "Chad": "TCD",
+  "Comoros": "COM",
+  "Colombia": "COL",
+  "Costa Rica": "CRI",
+  "Central African Republic": "CAF",
+  "Cuba": "CUB",
+  "Cape Verde": "CPV",
+  "Cook Islands": "COK",
+  "Cyprus": "CYP",
+  "Denmark": "DNK",
+  "Djibouti": "DJI",
+  "Dominica": "DMA",
+  "Dominican Republic": "DOM",
+  "Ecuador": "ECU",
+  "Egypt": "EGY",
+  "Ireland": "IRL",
+  "Equatorial Guinea": "GNQ",
+  "Estonia": "EST",
+  "Eritrea": "ERI",
+  "El Salvador": "SLV",
+  "Ethiopia": "ETH",
+  "Austria": "AUT",
+  "Czech Republic": "CZE",
+  "French Guiana": "GUF",
+  "Finland": "FIN",
+  "Fiji": "FJI",
+  "Falkland Islands (Malvinas)": "FLK",
+  "Micronesia, Federated States of": "FSM",
+  "French Polynesia": "PYF",
+  "France": "FRA",
+  "Gambia": "GMB",
+  "Gabon": "GAB",
+  "Georgia": "GEO",
+  "Ghana": "GHA",
+  "Grenada": "GRD",
+  "Greenland": "GRL",
+  "Germany": "DEU",
+  "Guam": "GUM",
+  "Greece": "GRC",
+  "Guatemala": "GTM",
+  "Guinea": "GIN",
+  "Guyana": "GUY",
+  "Haiti": "HTI",
+  "Honduras": "HND",
+  "Croatia": "HRV",
+  "Hungary": "HUN",
+  "Iceland": "ISL",
+  "India": "IND",
+  "Iran (Islamic Republic of)": "IRN",
+  "Israel": "ISR",
+  "Italy": "ITA",
+  "Cote d'Ivoire": "CIV",
+  "Iraq": "IRQ",
+  "Japan": "JPN",
+  "Jamaica": "JAM",
+  "Jordan": "JOR",
+  "Kenya": "KEN",
+  "Kyrgyzstan": "KGZ",
+  "Korea, Democratic People's Republic of": "PRK",
+  "Kiribati": "KIR",
+  "Korea, Republic of": "KOR",
+  "Kuwait": "KWT",
+  "Kazakhstan": "KAZ",
+  "Lao People's Democratic Republic": "LAO",
+  "Lebanon": "LBN",
+  "Latvia": "LVA",
+  "Belarus": "BLR",
+  "Lithuania": "LTU",
+  "Liberia": "LBR",
+  "Slovakia": "SVK",
+  "Liechtenstein": "LIE",
+  "Libyan Arab Jamahiriya": "LBY",
+  "Madagascar": "MDG",
+  "Martinique": "MTQ",
+  "Mongolia": "MNG",
+  "Montserrat": "MSR",
+  "The former Yugoslav Republic of Macedonia": "MKD",
+  "Mali": "MLI",
+  "Morocco": "MAR",
+  "Mauritius": "MUS",
+  "Mauritania": "MRT",
+  "Malta": "MLT",
+  "Oman": "OMN",
+  "Maldives": "MDV",
+  "Mexico": "MEX",
+  "Malaysia": "MYS",
+  "Mozambique": "MOZ",
+  "Malawi": "MWI",
+  "New Caledonia": "NCL",
+  "Niue": "NIU",
+  "Niger": "NER",
+  "Aruba": "ABW",
+  "Anguilla": "AIA",
+  "Belgium": "BEL",
+  "Hong Kong": "HKG",
+  "Northern Mariana Islands": "MNP",
+  "Faroe Islands": "FRO",
+  "Andorra": "AND",
+  "Gibraltar": "GIB",
+  "Isle of Man": "IMN",
+  "Luxembourg": "LUX",
+  "Macau": "MAC",
+  "Monaco": "MCO",
+  "Palestine": "PSE",
+  "Montenegro": "MNE",
+  "Mayotte": "MYT",
+  "Åland Islands": "ALA",
+  "Norfolk Island": "NFK",
+  "Cocos (Keeling) Islands": "CCK",
+  "Antarctica": "ATA",
+  "Bouvet Island": "BVT",
+  "French Southern and Antarctic Lands": "ATF",
+  "Heard Island and McDonald Islands": "HMD",
+  "British Indian Ocean Territory": "IOT",
+  "Christmas Island": "CXR",
+  "United States Minor Outlying Islands": "UMI",
+  "Vanuatu": "VUT",
+  "Nigeria": "NGA",
+  "Netherlands": "NLD",
+  "Norway": "NOR",
+  "Nepal": "NPL",
+  "Nauru": "NRU",
+  "Suriname": "SUR",
+  "Nicaragua": "NIC",
+  "New Zealand": "NZL",
+  "Paraguay": "PRY",
+  "Peru": "PER",
+  "Pakistan": "PAK",
+  "Poland": "POL",
+  "Panama": "PAN",
+  "Portugal": "PRT",
+  "Papua New Guinea": "PNG",
+  "Guinea-Bissau": "GNB",
+  "Qatar": "QAT",
+  "Reunion": "REU",
+  "Romania": "ROU",
+  "Republic of Moldova": "MDA",
+  "Philippines": "PHL",
+  "Puerto Rico": "PRI",
+  "Russia": "RUS",
+  "Rwanda": "RWA",
+  "Saudi Arabia": "SAU",
+  "Saint Kitts and Nevis": "KNA",
+  "Seychelles": "SYC",
+  "South Africa": "ZAF",
+  "Lesotho": "LSO",
+  "Botswana": "BWA",
+  "Senegal": "SEN",
+  "Slovenia": "SVN",
+  "Sierra Leone": "SLE",
+  "Singapore": "SGP",
+  "Somalia": "SOM",
+  "Spain": "ESP",
+  "Saint Lucia": "LCA",
+  "Sudan": "SDN",
+  "Sweden": "SWE",
+  "Syrian Arab Republic": "SYR",
+  "Switzerland": "CHE",
+  "Trinidad and Tobago": "TTO",
+  "Thailand": "THA",
+  "Tajikistan": "TJK",
+  "Tokelau": "TKL",
+  "Tonga": "TON",
+  "Togo": "TGO",
+  "Sao Tome and Principe": "STP",
+  "Tunisia": "TUN",
+  "Turkey": "TUR",
+  "Tuvalu": "TUV",
+  "Turkmenistan": "TKM",
+  "United Republic of Tanzania": "TZA",
+  "Uganda": "UGA",
+  "United Kingdom": "GBR",
+  "Ukraine": "UKR",
+  "United States": "USA",
+  "Burkina Faso": "BFA",
+  "Uruguay": "URY",
+  "Uzbekistan": "UZB",
+  "Saint Vincent and the Grenadines": "VCT",
+  "Venezuela": "VEN",
+  "British Virgin Islands": "VGB",
+  "Viet Nam": "VNM",
+  "United States Virgin Islands": "VIR",
+  "Namibia": "NAM",
+  "Wallis and Futuna Islands": "WLF",
+  "Samoa": "WSM",
+  "Swaziland": "SWZ",
+  "Yemen": "YEM",
+  "Zambia": "ZMB",
+  "Zimbabwe": "ZWE",
+  "Indonesia": "IDN",
+  "Guadeloupe": "GLP",
+  "Netherlands Antilles": "ANT",
+  "United Arab Emirates": "ARE",
+  "Timor-Leste": "TLS",
+  "Pitcairn Islands": "PCN",
+  "Palau": "PLW",
+  "Marshall Islands": "MHL",
+  "Saint Pierre and Miquelon": "SPM",
+  "Saint Helena": "SHN",
+  "San Marino": "SMR",
+  "Turks and Caicos Islands": "TCA",
+  "Western Sahara": "ESH",
+  "Serbia": "SRB",
+  "Holy See (Vatican City)": "VAT",
+  "Svalbard": "SJM",
+  "Saint Martin": "MAF",
+  "Saint Barthelemy": "BLM",
+  "Guernsey": "GGY",
+  "Jersey": "JEY",
+  "South Georgia South Sandwich Islands": "SGS",
+  "Taiwan": "TWN"
+};
+const countryCodesToNames = {
+    "ATG": "Antigua and Barbuda",
+    "DZA": "Algeria",
+    "AZE": "Azerbaijan",
+    "ALB": "Albania",
+    "ARM": "Armenia",
+    "AGO": "Angola",
+    "ASM": "American Samoa",
+    "ARG": "Argentina",
+    "AUS": "Australia",
+    "BHR": "Bahrain",
+    "BRB": "Barbados",
+    "BMU": "Bermuda",
+    "BHS": "Bahamas",
+    "BGD": "Bangladesh",
+    "BLZ": "Belize",
+    "BIH": "Bosnia and Herzegovina",
+    "BOL": "Bolivia",
+    "MMR": "Burma",
+    "BEN": "Benin",
+    "SLB": "Solomon Islands",
+    "BRA": "Brazil",
+    "BGR": "Bulgaria",
+    "BRN": "Brunei Darussalam",
+    "CAN": "Canada",
+    "KHM": "Cambodia",
+    "LKA": "Sri Lanka",
+    "COG": "Congo",
+    "COD": "Democratic Republic of the Congo",
+    "BDI": "Burundi",
+    "CHN": "China",
+    "AFG": "Afghanistan",
+    "BTN": "Bhutan",
+    "CHL": "Chile",
+    "CYM": "Cayman Islands",
+    "CMR": "Cameroon",
+    "TCD": "Chad",
+    "COM": "Comoros",
+    "COL": "Colombia",
+    "CRI": "Costa Rica",
+    "CAF": "Central African Republic",
+    "CUB": "Cuba",
+    "CPV": "Cape Verde",
+    "COK": "Cook Islands",
+    "CYP": "Cyprus",
+    "DNK": "Denmark",
+    "DJI": "Djibouti",
+    "DMA": "Dominica",
+    "DOM": "Dominican Republic",
+    "ECU": "Ecuador",
+    "EGY": "Egypt",
+    "IRL": "Ireland",
+    "GNQ": "Equatorial Guinea",
+    "EST": "Estonia",
+    "ERI": "Eritrea",
+    "SLV": "El Salvador",
+    "ETH": "Ethiopia",
+    "AUT": "Austria",
+    "CZE": "Czech Republic",
+    "GUF": "French Guiana",
+    "FIN": "Finland",
+    "FJI": "Fiji",
+    "FLK": "Falkland Islands (Malvinas)",
+    "FSM": "Micronesia, Federated States of",
+    "PYF": "French Polynesia",
+    "FRA": "France",
+    "GMB": "Gambia",
+    "GAB": "Gabon",
+    "GEO": "Georgia",
+    "GHA": "Ghana",
+    "GRD": "Grenada",
+    "GRL": "Greenland",
+    "DEU": "Germany",
+    "GUM": "Guam",
+    "GRC": "Greece",
+    "GTM": "Guatemala",
+    "GIN": "Guinea",
+    "GUY": "Guyana",
+    "HTI": "Haiti",
+    "HND": "Honduras",
+    "HRV": "Croatia",
+    "HUN": "Hungary",
+    "ISL": "Iceland",
+    "IND": "India",
+    "IRN": "Iran (Islamic Republic of)",
+    "ISR": "Israel",
+    "ITA": "Italy",
+    "CIV": "Cote d'Ivoire",
+    "IRQ": "Iraq",
+    "JPN": "Japan",
+    "JAM": "Jamaica",
+    "JOR": "Jordan",
+    "KEN": "Kenya",
+    "KGZ": "Kyrgyzstan",
+    "PRK": "Korea, Democratic People's Republic of",
+    "KIR": "Kiribati",
+    "KOR": "Korea, Republic of",
+    "KWT": "Kuwait",
+    "KAZ": "Kazakhstan",
+    "LAO": "Lao People's Democratic Republic",
+    "LBN": "Lebanon",
+    "LVA": "Latvia",
+    "BLR": "Belarus",
+    "LTU": "Lithuania",
+    "LBR": "Liberia",
+    "SVK": "Slovakia",
+    "LIE": "Liechtenstein",
+    "LBY": "Libyan Arab Jamahiriya",
+    "MDG": "Madagascar",
+    "MTQ": "Martinique",
+    "MNG": "Mongolia",
+    "MSR": "Montserrat",
+    "MKD": "The former Yugoslav Republic of Macedonia",
+    "MLI": "Mali",
+    "MAR": "Morocco",
+    "MUS": "Mauritius",
+    "MRT": "Mauritania",
+    "MLT": "Malta",
+    "OMN": "Oman",
+    "MDV": "Maldives",
+    "MEX": "Mexico",
+    "MYS": "Malaysia",
+    "MOZ": "Mozambique",
+    "MWI": "Malawi",
+    "NCL": "New Caledonia",
+    "NIU": "Niue",
+    "NER": "Niger",
+    "ABW": "Aruba",
+    "AIA": "Anguilla",
+    "BEL": "Belgium",
+    "HKG": "Hong Kong",
+    "MNP": "Northern Mariana Islands",
+    "FRO": "Faroe Islands",
+    "AND": "Andorra",
+    "GIB": "Gibraltar",
+    "IMN": "Isle of Man",
+    "LUX": "Luxembourg",
+    "MAC": "Macau",
+    "MCO": "Monaco",
+    "PSE": "Palestine",
+    "MNE": "Montenegro",
+    "MYT": "Mayotte",
+    "ALA": "Åland Islands",
+    "NFK": "Norfolk Island",
+    "CCK": "Cocos (Keeling) Islands",
+    "ATA": "Antarctica",
+    "BVT": "Bouvet Island",
+    "ATF": "French Southern and Antarctic Lands",
+    "HMD": "Heard Island and McDonald Islands",
+    "IOT": "British Indian Ocean Territory",
+    "CXR": "Christmas Island",
+    "UMI": "United States Minor Outlying Islands",
+    "VUT": "Vanuatu",
+    "NGA": "Nigeria",
+    "NLD": "Netherlands",
+    "NOR": "Norway",
+    "NPL": "Nepal",
+    "NRU": "Nauru",
+    "SUR": "Suriname",
+    "NIC": "Nicaragua",
+    "NZL": "New Zealand",
+    "PRY": "Paraguay",
+    "PER": "Peru",
+    "PAK": "Pakistan",
+    "POL": "Poland",
+    "PAN": "Panama",
+    "PRT": "Portugal",
+    "PNG": "Papua New Guinea",
+    "GNB": "Guinea-Bissau",
+    "QAT": "Qatar",
+    "REU": "Reunion",
+    "ROU": "Romania",
+    "MDA": "Republic of Moldova",
+    "PHL": "Philippines",
+    "PRI": "Puerto Rico",
+    "RUS": "Russia",
+    "RWA": "Rwanda",
+    "SAU": "Saudi Arabia",
+    "KNA": "Saint Kitts and Nevis",
+    "SYC": "Seychelles",
+    "ZAF": "South Africa",
+    "LSO": "Lesotho",
+    "BWA": "Botswana",
+    "SEN": "Senegal",
+    "SVN": "Slovenia",
+    "SLE": "Sierra Leone",
+    "SGP": "Singapore",
+    "SOM": "Somalia",
+    "ESP": "Spain",
+    "LCA": "Saint Lucia",
+    "SDN": "Sudan",
+    "SWE": "Sweden",
+    "SYR": "Syrian Arab Republic",
+    "CHE": "Switzerland",
+    "TTO": "Trinidad and Tobago",
+    "THA": "Thailand",
+    "TJK": "Tajikistan",
+    "TKL": "Tokelau",
+    "TON": "Tonga",
+    "TGO": "Togo",
+    "STP": "Sao Tome and Principe",
+    "TUN": "Tunisia",
+    "TUR": "Turkey",
+    "TUV": "Tuvalu",
+    "TKM": "Turkmenistan",
+    "TZA": "United Republic of Tanzania",
+    "UGA": "Uganda",
+    "GBR": "United Kingdom",
+    "UKR": "Ukraine",
+    "USA": "United States",
+    "BFA": "Burkina Faso",
+    "URY": "Uruguay",
+    "UZB": "Uzbekistan",
+    "VCT": "Saint Vincent and the Grenadines",
+    "VEN": "Venezuela",
+    "VGB": "British Virgin Islands",
+    "VNM": "Viet Nam",
+    "VIR": "United States Virgin Islands",
+    "NAM": "Namibia",
+    "WLF": "Wallis and Futuna Islands",
+    "WSM": "Samoa",
+    "SWZ": "Swaziland",
+    "YEM": "Yemen",
+    "ZMB": "Zambia",
+    "ZWE": "Zimbabwe",
+    "IDN": "Indonesia",
+    "GLP": "Guadeloupe",
+    "ANT": "Netherlands Antilles",
+    "ARE": "United Arab Emirates",
+    "TLS": "Timor-Leste",
+    "PCN": "Pitcairn Islands",
+    "PLW": "Palau",
+    "MHL": "Marshall Islands",
+    "SPM": "Saint Pierre and Miquelon",
+    "SHN": "Saint Helena",
+    "SMR": "San Marino",
+    "TCA": "Turks and Caicos Islands",
+    "ESH": "Western Sahara",
+    "SRB": "Serbia",
+    "VAT": "Holy See (Vatican City)",
+    "SJM": "Svalbard",
+    "MAF": "Saint Martin",
+    "BLM": "Saint Barthelemy",
+    "GGY": "Guernsey",
+    "JEY": "Jersey",
+    "SGS": "South Georgia South Sandwich Islands",
+    "TWN": "Taiwan"
+}
+const countriesToHighlight = [
+    "Argentina",
+    "Australia",
+    "Belgium",
+    //"Brazil",
+    "Colombia",
+    "Croatia",
+    "Denmark",
+    "Ecuador",
+    "England",
+    "Finland",
+    "France",
+    "Germany",
+    "Greece",
+    "Hungary",
+    "Italy",
+    "Japan",
+    "Mexico",
+    "Netherlands",
+    "Norway",
+    "Poland",
+    "Portugal",
+    "Scotland",
+    "Slovakia",
+    "South Korea",
+    "Spain",
+    "Sweden",
+    "Turkey",
+    "USA"
+];
+// Top 5 destination countries lookup table
+const topDestinationCountries = {
+  "Spain": ["England", "Argentina", "Portugal", "Italy", "France"],
+  "Germany": ["England", "Netherlands", "Greece", "Belgium", "Turkey"],
+  "England": ["Spain", "France", "Germany", "Italy", "Portugal"],
+  "Italy": ["Spain", "England", "France", "Greece", "Turkey"],
+  "Portugal": ["Spain", "France", "Belgium", "Turkey", "England"],
+  "Norway": ["Sweden", "Denmark", "Belgium", "Netherlands", "USA"],
+  "France": ["England", "Belgium", "Spain", "Italy", "Turkey"],
+  "Netherlands": ["Germany", "England", "Belgium", "Italy", "France"],
+  "Belgium": ["France", "England", "Netherlands", "Turkey", "Germany"],
+  "Argentina": ["Mexico", "Spain", "Colombia", "Ecuador", "USA"],
+  "Greece": ["Germany", "England", "Italy", "France", "Belgium"],
+  "USA": ["Argentina", "England", "Mexico", "Germany", "Germany"],
+  "Colombia": ["Argentina", "Mexico", "Spain", "USA", "Portugal"],
+  "Turkey": ["France", "Belgium", "England", "Portugal", "Italy"],
+  "Japan": ["South Korea", "Portugal", "Belgium", "Australia", "Greece"],
+  "Mexico": ["Argentina", "Colombia", "USA", "Spain", "Spain"],
+  "Croatia": ["England", "Germany", "Italy", "Turkey", "Greece"],
+  "Denmark": ["Norway", "Germany", "Sweden", "England", "Netherlands"],
+  "Slovakia": ["Poland", "Belgium", "Germany", "Turkey", "Turkey"],
+  "Sweden": ["Norway", "Denmark", "England", "Germany", "Belgium"],
+  "South Korea": ["Japan", "Greece", "Australia", "Belgium", "Germany"],
+  "Poland": ["Germany", "Turkey", "Italy", "England", "Romania"],
+  "Australia": ["South Korea", "England", "Greece", "Netherlands", "England"],
+  "Finland": ["England", "nan", "Norway", "Germany", "England"],
+  "Romania": ["Poland", "Turkey", "Portugal", "Italy", "France"],
+  "Ireland": ["England", "England", "Italy", "France", "Portugal"],
+  "Hungary": ["England", "France", "Australia", "Belgium", "Slovakia"],
+  "Ecuador": ["Argentina", "Spain", "Mexico", "USA", "Belgium"]
+};
+</script>
