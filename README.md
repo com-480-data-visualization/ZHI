@@ -188,7 +188,7 @@ Our website, developed using React, can be accessed through the following link: 
 
 The project is organized as follows:
 
-- `FootViz.zip`: Source code of the React website.
+- `footviz.zip`: Source code of the React website.
 - `video_presentation.mp4`: A video presentation that navigates through the website.
 - `process_book.pdf`: A document detailing the process and decisions made leading to the final result.
 - `notebooks` folder: Contains preprocessing notebooks that were used for website creation.
